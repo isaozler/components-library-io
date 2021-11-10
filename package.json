@@ -1,7 +1,8 @@
 {
   "name": "components-library-io",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
+  "typings": "dist/@types/index.d.ts",
   "private": false,
   "files": [
     "dist",
@@ -30,7 +31,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --extensions=.ts --presets @babel/preset-typescript --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/stories --extensions=.ts,.tsx --presets @babel/preset-typescript --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
