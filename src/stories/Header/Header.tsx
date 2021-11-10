@@ -1,7 +1,5 @@
-import React from 'react';
-
 import { Button } from '@stories/Button/Cart/Button';
-import './header.css';
+import styles from './header.module.scss';
 
 interface HeaderProps {
   user?: {};
@@ -12,7 +10,7 @@ interface HeaderProps {
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
   <header>
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       <div>
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
