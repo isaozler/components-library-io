@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 export interface ButtonProps {
@@ -42,7 +43,7 @@ const ButtonStyle = styled.button.attrs((props: ButtonProps) => ({
 
   color: ${props => props.color};
   background-color: ${props => !props.backgroundColor ? 'transparent' : props.backgroundColor};
-  ${props => props.size}
+  ${props => ButtonSizes[props.size || 'medium']}
 `;
 
 const ButtonPrimary = styled(ButtonStyle)`
@@ -85,7 +86,7 @@ export const Button = ({
     <Component
       type="button"
       backgroundColor={backgroundColor}
-      size={ButtonSizes[size] || 'medium'}
+      size={size}
       color={color}
       {...props}
     >
