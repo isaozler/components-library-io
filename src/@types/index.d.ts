@@ -1,4 +1,1 @@
-import React from 'react';
-
-import { ButtonProps } from '@stories/Button/Cart/Button';
-export class Button extends React.Component<ButtonProps> { }
+export * from './Button';

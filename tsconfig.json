@@ -21,8 +21,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@stories/*": ["src/stories/*"]
-    }
+      "@stories/*": ["src/stories/*"],
+      "@types/*": ["src/@types/*"]
+    },
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/@types"
   },
   "include": [
     "src"
