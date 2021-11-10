@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { ButtonProps } from './ButtonProps';
+import ButtonProps from './schema';
 
 const ButtonStyle = styled.button.attrs((props: ButtonProps) => ({
   backgroundColor: props.backgroundColor,

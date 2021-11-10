@@ -24,3 +24,5 @@ export interface ButtonProps {
    */
   onClick?: () => void;
 }
+
+export default ButtonProps;
