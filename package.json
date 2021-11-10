@@ -1,6 +1,6 @@
 {
   "name": "components-library-io",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "typings": "dist/@types/index.d.ts",
   "private": false,
@@ -31,7 +31,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/stories --extensions=.ts,.tsx --presets @babel/preset-typescript --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+    "copy-types": "copyfiles -u 1 ./src/@types/**/* dist",
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/stories --extensions=.ts,.tsx --presets @babel/preset-typescript --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__ && npm run copy-types"
   },
   "eslintConfig": {
     "extends": [
@@ -74,6 +75,7 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.12",
     "babel-plugin-root-import": "^6.6.0",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "path": "^0.12.7",
     "react-test-renderer": "^17.0.2",
@@ -86,5 +88,6 @@
   },
   "resolutions": {
     "babel-loader": "8.1.0"
-  }
+  },
+  "license": "MIT"
 }

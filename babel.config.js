@@ -19,6 +19,9 @@ module.exports = function (api) {
 
   return {
     presets,
-    plugins
+    plugins,
+    exclude: [
+      ".d.ts",
+    ]
   };
 };
