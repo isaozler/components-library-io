@@ -1,4 +1,4 @@
-import { Button } from '@stories/Button/Cart/Button';
+import { Button } from '@stories/Button/Button';
 
 export {
   Button
