@@ -1,3 +1,4 @@
+import { IconsK } from '../Icon/Icon';
 export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -22,6 +23,8 @@ export interface ButtonProps {
   /**
    * Optional click handler
    */
+  borderRadius?: number;
+  icon?: IconsK;
   onClick?: () => void;
 }
 

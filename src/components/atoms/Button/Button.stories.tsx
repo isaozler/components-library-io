@@ -9,6 +9,10 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    color: { control: 'color' },
+    borderRadius: {
+      defaultValue: 0,
+    },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -39,4 +43,10 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+};
+
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  icon: 'mdiMagnify',
+  label: 'Search',
 };

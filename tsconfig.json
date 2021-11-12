@@ -20,7 +20,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "paths": {
-      "@stories/*": ["src/stories/*"],
+      "@components/*": ["src/components/*"],
       "@types/*": ["src/@types/*"]
     },
     "declaration": true,

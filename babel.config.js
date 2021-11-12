@@ -9,8 +9,8 @@ module.exports = function (api) {
       {
         "paths": [
           {
-            "rootPathSuffix": "./src/stories",
-            "rootPathPrefix": "@stories/"
+            "rootPathSuffix": "./src/components",
+            "rootPathPrefix": "@components/"
           }
         ]
       }
