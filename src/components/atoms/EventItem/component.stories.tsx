@@ -14,4 +14,5 @@ Default.args = {
   title: 'Event Title',
   dateTime: '2020-12-21',
   text: 'Description',
+  className: '',
 };

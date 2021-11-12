@@ -5,7 +5,7 @@ import GlobalStyle from '@components/globalStyle';
 import IProps from './schema';
 import { Wrapper, Time, Day, Month, Content } from './styles';
 
-const Component = ({ dateTime, title, text }: IProps) => {
+const Component = ({ dateTime, title, text, className }: IProps) => {
   if (!dateTime) return <></>;
 
   const date = dayjs(dateTime);
@@ -15,7 +15,7 @@ const Component = ({ dateTime, title, text }: IProps) => {
   return (
     <Fragment>
       <GlobalStyle />
-      <Wrapper>
+      <Wrapper className={className}>
         <Time dateTime={date.toISOString()}>
           <Day>{day}</Day>
           <Month>{month}</Month>
