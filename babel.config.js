@@ -20,8 +20,8 @@ module.exports = function (api) {
   return {
     presets,
     plugins,
-    exclude: [
-      ".d.ts",
-    ]
+    // exclude: [
+    //   ".d.ts",
+    // ]
   };
 };
