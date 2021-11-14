@@ -1,6 +1,6 @@
 {
   "name": "components-library-io",
-  "version": "0.1.19",
+  "version": "0.1.7",
   "main": "dist/index.js",
   "typings": "dist/@types/index.d.ts",
   "private": false,

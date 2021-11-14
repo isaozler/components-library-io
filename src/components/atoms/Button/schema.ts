@@ -1,4 +1,3 @@
-import React from 'react';
 import { IconsK } from '../Icon/Icon';
 export interface ButtonProps {
   /**
