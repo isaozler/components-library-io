@@ -1,5 +1,5 @@
 // Atoms
-import { Button } from './atoms/Button/Button';
+import Button from './atoms/Button/Button';
 import CTAs from './atoms/CTAs/component';
 import EventItem from './atoms/EventItem/component';
 import Icon from './atoms/Icon/Icon';
