@@ -4,6 +4,7 @@ import CTAs from './atoms/CTAs/component';
 import EventItem from './atoms/EventItem/component';
 import Icon from './atoms/Icon/Icon';
 import Image from './atoms/Image/component';
+import Menu from './atoms/Menu/component';
 
 // Molecules
 import Collage from './molecules/Collage/component';
@@ -17,6 +18,7 @@ export {
   EventItem,
   Icon,
   Image,
+  Menu,
   // 
   Collage,
   Columns,

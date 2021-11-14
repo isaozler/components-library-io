@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Component from './component';
 
 export default {
-  title: 'Atoms/Navigation',
+  title: 'Atoms/Menu',
   component: Component,
   argTypes: {},
 } as ComponentMeta<typeof Component>;
