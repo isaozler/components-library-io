@@ -1,35 +1,60 @@
-import React from 'react';
-import { ButtonPrimary, ButtonSecondary } from './styles'
+import React, { Fragment } from 'react';
+import GlobalStyle from '@components/globalStyle';
+
 import ButtonProps from './schema';
 
 import { Component as Icon } from '@components/atoms/Icon/Icon';
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  backgroundColor,
-  label,
-  size='medium',
-  color='black',
-  borderRadius=0,
-  icon,
-  ...props
-}: ButtonProps) => {
-  const Component = primary ? ButtonPrimary : ButtonSecondary;
+import { Button, ButtonLink, Label, Icon as IconWrapper } from './styles'
+
+export const Component = (props: ButtonProps) => {
+  const {
+    backgroundColor,
+    label,
+    size = 'normal',
+    color = 'black',
+    colorHover = 'black',
+    border,
+    icon,
+    iconCustom,
+    isFullWidth = false,
+    iconAlignment = 'right',
+    type = 'button',
+    underlined = false,
+    underlinedHover = false,
+  } = props;
+  const Component = type === 'link' ? ButtonLink : Button;
+  const CustomIconComponent = iconCustom ? iconCustom : null;
 
   return (
-    <Component
-      type="button"
-      backgroundColor={backgroundColor}
-      size={size}
-      color={color}
-      borderRadius={borderRadius}
-      {...props}
-    >
-      {icon ? <Icon icon={icon} color={color} /> : <></>}
-      {label}
-    </Component>
+    <Fragment>
+      <GlobalStyle />
+      <Component
+        type="button"
+        backgroundColor={backgroundColor}
+        size={size}
+        color={color}
+        colorHover={colorHover}
+        border={border}
+        isFullWidth={isFullWidth}
+        iconAlignment={iconAlignment}
+        underlined={underlined}
+        underlinedHover={underlinedHover}
+        {...props}
+      >
+        {
+          icon || CustomIconComponent ?
+            <IconWrapper iconAlignment={iconAlignment} size={size}>
+              {
+                CustomIconComponent ? CustomIconComponent : <Icon icon={icon} />
+              }
+            </IconWrapper>
+            : <></>
+        }
+        <Label iconAlignment={iconAlignment}>{label}</Label>
+      </Component>
+    </Fragment>
   );
 };
+
+export default Component;

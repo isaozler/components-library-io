@@ -9,7 +9,6 @@ export type IconsK = keyof typeof Icons;
 
 export interface IProps {
   icon?: IconsK;
-  color?: string;
   onClick?: () => void;
 }
 

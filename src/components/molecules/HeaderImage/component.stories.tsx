@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Component from './component';
 
 export default {
-  title: 'Atoms/Event Item',
+  title: 'Molecules/Header Image',
   component: Component,
   argTypes: {},
 } as ComponentMeta<typeof Component>;
@@ -11,8 +11,10 @@ const Template: ComponentStory<typeof Component> = (args) => <Component {...args
 
 export const Default = Template.bind({});
 Default.args = {
-  title: 'Event Title',
-  dateTime: '2020-12-22',
-  text: 'Description',
+  defaultSection: 0,
+  sections: [
+    { href: '#1', newWindow: true, image: 'https://www.google.com/logos/doodles/2021/celebrating-johannes-vermeer-6753651837109124.3-l.webp', caption: 'Caption 1', fit: 'cover' },
+    { href: '#2', image: 'image-2', caption: 'Caption 2', fit: 'contain' },
+  ],
   className: '',
 };

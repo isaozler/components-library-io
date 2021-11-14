@@ -1,21 +1,22 @@
+import React from 'react';
 import { IconsK } from '../Icon/Icon';
 export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
   /**
    * What background color to use
    */
   backgroundColor?: string;
+  backgroundColorHover?: string;
+  type?: 'link' | 'button';
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'normal' | 'large';
   /**
    * Color of the button text?
    */
+  fontWeight?: 'normal' | 'bold' | string;
   color?: string;
+  colorHover?: string;
   /**
    * Button contents
    */
@@ -23,9 +24,26 @@ export interface ButtonProps {
   /**
    * Optional click handler
    */
-  borderRadius?: number;
+  border?: {
+    color: string;
+    size: number;
+    radius?: string;
+    style?: 'solid' | 'dashed';
+  };
+  borderHover?: {
+    color: string;
+    size: number;
+    radius?: string;
+    style?: 'solid' | 'dashed';
+  };
   icon?: IconsK;
+  iconCustom?: JSX.Element;
+  isFullWidth?: boolean;
+  href?: string;
+  underlined?: boolean;
+  underlinedHover?: boolean;
   onClick?: () => void;
+  iconAlignment?: 'left' | 'right';
 }
 
 export default ButtonProps;
