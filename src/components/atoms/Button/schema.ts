@@ -1,5 +1,6 @@
 import { IconsK } from '../Icon/Icon';
 export interface ButtonProps {
+  className?: string;
   /**
    * What background color to use
    */
@@ -25,13 +26,13 @@ export interface ButtonProps {
    */
   border?: {
     color: string;
-    size: number;
+    size: string;
     radius?: string;
     style?: 'solid' | 'dashed';
   };
   borderHover?: {
     color: string;
-    size: number;
+    size: string;
     radius?: string;
     style?: 'solid' | 'dashed';
   };

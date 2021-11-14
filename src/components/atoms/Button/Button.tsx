@@ -9,6 +9,7 @@ import { Button, ButtonLink, Label, Icon as IconWrapper } from './styles'
 
 export const Component = (props: ButtonProps) => {
   const {
+    className,
     backgroundColor,
     label,
     size = 'normal',
@@ -30,6 +31,7 @@ export const Component = (props: ButtonProps) => {
     <Fragment>
       <GlobalStyle />
       <Component
+        className={className}
         type="button"
         backgroundColor={backgroundColor}
         size={size}

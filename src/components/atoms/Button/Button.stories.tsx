@@ -28,13 +28,13 @@ Bordered.args = {
   colorHover: 'black',
   label: 'Bordered Button',
   borderHover: {
-    size: 1,
+    size: '1px',
     color: 'black',
     style: 'dashed',
     radius: '10px',
   },
   border: {
-    size: 1,
+    size: '1px',
     color: 'red',
     style: 'solid'
   },
