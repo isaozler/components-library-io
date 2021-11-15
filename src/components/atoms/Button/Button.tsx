@@ -44,6 +44,7 @@ export const Component = (props: ButtonProps) => {
         underlined={underlined}
         underlinedHover={underlinedHover}
         target={isNewWindow ? '_blank' : ''}
+        rel={isNewWindow ? 'noreferrer' : ''}
         {...props}
       >
         {
