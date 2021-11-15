@@ -7,7 +7,7 @@ import { Menu, Ul, Li, A } from './styles';
 
 let incrementKey = 0;
 
-const LiCreator = (label: string, href: string, ulChildren: any, options: { isRoot?: boolean, isFullWidth?: boolean }) => {
+const LiCreator = (label: string, href: string, target: string | null = null, callBackHandler: Function | null = null, ulChildren: any, options: { isRoot?: boolean, isFullWidth?: boolean }) => {
   const onClick = (e: MouseEvent) => {
     e.preventDefault();
   }
@@ -16,7 +16,7 @@ const LiCreator = (label: string, href: string, ulChildren: any, options: { isRo
   }
   return (
     <Li key={`menu-link--${href}`} isRoot={options.isRoot} isFullWidth={options.isFullWidth}>
-      <A href={href} {...linkProps}>
+      <A href={href} {...linkProps} {...(target ? { target } : {})} {...(callBackHandler ? { onClick: callBackHandler } : {})}>
         {label}
       </A>
       {ulChildren}
@@ -39,14 +39,15 @@ const UlTreeBuilder = ({ id, arrObjs, isRoot, isFullWidth }: { id: string, arrOb
 
     if (arrObjs[i].children) {
       let ulWithChildren = UlTreeBuilder({ id, isRoot, arrObjs: arrObjs[i].children })
-      liSingle = LiCreator(arrObjs[i].label, '#', ulWithChildren, { isRoot, isFullWidth });
+      liSingle = LiCreator(arrObjs[i].label, '#', arrObjs[i].target, arrObjs[i].onClick, ulWithChildren, { isRoot, isFullWidth });
     } else {
-      liSingle = LiCreator(arrObjs[i].label, arrObjs[i].href, undefined, { isRoot, isFullWidth });
+      liSingle = LiCreator(arrObjs[i].label, arrObjs[i].href, arrObjs[i].target, arrObjs[i].onClick, undefined, { isRoot, isFullWidth });
     }
-    MenuItems.push(liSingle)
+
+    MenuItems.push(liSingle);
   }
 
-  return childUl(MenuItems)
+  return childUl(MenuItems);
 };
 
 const Component = ({ id, className, menu, isFullWidth }: IProps) => {
