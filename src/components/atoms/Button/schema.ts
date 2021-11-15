@@ -40,6 +40,7 @@ export interface ButtonProps {
   iconCustom?: JSX.Element;
   isFullWidth?: boolean;
   href?: string;
+  isNewWindow?: boolean;
   underlined?: boolean;
   underlinedHover?: boolean;
   onClick?: () => void;

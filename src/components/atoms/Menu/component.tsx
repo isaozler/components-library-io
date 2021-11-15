@@ -5,6 +5,8 @@ import IProps from './schema';
 
 import { Menu, Ul, Li, A } from './styles';
 
+let incrementKey = 0;
+
 const LiCreator = (label: string, href: string, ulChildren: any, options: { isRoot?: boolean, isFullWidth?: boolean }) => {
   const onClick = (e: MouseEvent) => {
     e.preventDefault();
@@ -13,7 +15,7 @@ const LiCreator = (label: string, href: string, ulChildren: any, options: { isRo
     ...(ulChildren ? { onClick } : {}),
   }
   return (
-    <Li isRoot={options.isRoot} isFullWidth={options.isFullWidth}>
+    <Li key={`menu-link--${href}`} isRoot={options.isRoot} isFullWidth={options.isFullWidth}>
       <A href={href} {...linkProps}>
         {label}
       </A>
@@ -22,7 +24,7 @@ const LiCreator = (label: string, href: string, ulChildren: any, options: { isRo
   )
 };
 
-const UlTreeBuilder = ({ arrObjs, isRoot, isFullWidth }: { arrObjs: any[], isRoot?: boolean, isFullWidth?: boolean }) => {
+const UlTreeBuilder = ({ id, arrObjs, isRoot, isFullWidth }: { id: string, arrObjs: any[], isRoot?: boolean, isFullWidth?: boolean }) => {
   if (!arrObjs?.length) return null;
 
   const UlParent = ({ children }: any) => {
@@ -30,13 +32,13 @@ const UlTreeBuilder = ({ arrObjs, isRoot, isFullWidth }: { arrObjs: any[], isRoo
   };
 
   let MenuItems = [];
-  let childUl = (children: JSX.Element[]) => <UlParent>{children.map(li => li)}</UlParent>
+  let childUl = (children: JSX.Element[]) => <UlParent>{children.map(LiChild => ({ ...LiChild, key: `${id}__nav-child-li--${incrementKey++}` }))}</UlParent>
 
   for (let i = 0; i < arrObjs.length; i++) {
     let liSingle;
 
     if (arrObjs[i].children) {
-      let ulWithChildren = UlTreeBuilder({ isRoot, arrObjs: arrObjs[i].children })
+      let ulWithChildren = UlTreeBuilder({ id, isRoot, arrObjs: arrObjs[i].children })
       liSingle = LiCreator(arrObjs[i].label, '#', ulWithChildren, { isRoot, isFullWidth });
     } else {
       liSingle = LiCreator(arrObjs[i].label, arrObjs[i].href, undefined, { isRoot, isFullWidth });
@@ -47,12 +49,12 @@ const UlTreeBuilder = ({ arrObjs, isRoot, isFullWidth }: { arrObjs: any[], isRoo
   return childUl(MenuItems)
 };
 
-const Component = ({ className, menu, isFullWidth }: IProps) => {
+const Component = ({ id, className, menu, isFullWidth }: IProps) => {
   return (
     <Fragment>
       <GlobalStyle />
       <Menu className={className}>
-        {menu.length ? UlTreeBuilder({ arrObjs: menu, isRoot: true, isFullWidth }) : <></>}
+        {menu.length ? UlTreeBuilder({ id, arrObjs: menu, isRoot: true, isFullWidth }) : <></>}
       </Menu>
     </Fragment>
   );

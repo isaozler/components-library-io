@@ -11,6 +11,7 @@ const Template: ComponentStory<typeof Component> = (args) => <Component {...args
 
 export const Default = Template.bind({});
 Default.args = {
+  id: 'main-nav',
   className: '',
   isFullWidth: true,
   menu: [

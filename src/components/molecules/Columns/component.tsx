@@ -5,10 +5,11 @@ import IProps from './schema';
 
 import { Wrapper, Column } from './styles';
 
-const Component = ({ className, sizes, contents, hasSpaceBetween, isVertical }: IProps) => {
+const Component = ({ title, className, sizes, contents, hasSpaceBetween, isVertical }: IProps) => {
   return (
     <Fragment>
       <GlobalStyle />
+      {title ? <h1>{title}</h1> : <></>}
       <Wrapper className={className} isVertical={isVertical}>
         {Array.from({ length: contents.length }).map((_, index) => {
           return (

@@ -23,6 +23,7 @@ export const Component = (props: ButtonProps) => {
     type = 'button',
     underlined = false,
     underlinedHover = false,
+    isNewWindow = false,
   } = props;
   const Component = type === 'link' ? ButtonLink : Button;
   const CustomIconComponent = iconCustom ? iconCustom : null;
@@ -42,6 +43,7 @@ export const Component = (props: ButtonProps) => {
         iconAlignment={iconAlignment}
         underlined={underlined}
         underlinedHover={underlinedHover}
+        target={isNewWindow ? '_blank' : ''}
         {...props}
       >
         {

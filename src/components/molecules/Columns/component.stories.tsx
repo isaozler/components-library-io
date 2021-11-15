@@ -11,6 +11,7 @@ const Template: ComponentStory<typeof Component> = (args) => <Component {...args
 
 export const Default = Template.bind({});
 Default.args = {
+  title: 'Columns Title',
   isVertical: false,
   contents: [
     <div>Column 1</div>,

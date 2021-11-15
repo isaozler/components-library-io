@@ -82,4 +82,5 @@ LinkWithIcon.args = {
   icon: 'mdiMagnify',
   label: 'Search',
   iconAlignment: 'right',
+  isNewWindow: true,
 };
