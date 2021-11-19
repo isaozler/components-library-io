@@ -2,12 +2,13 @@ import React, { Fragment, useCallback, useState } from 'react';
 import GlobalStyle from '@components/globalStyle';
 
 import ImageComponent from '@components/atoms/Image/component';
+import { Component as Icon } from '@components/atoms/Icon/Icon';
 
 import IProps from './schema';
 
 import { Wrapper, Container, Controls, Control, Section, Caption, Button } from './styles';
 
-const Component = ({ defaultSection, sections, className }: IProps) => {
+const Component = ({ defaultSection, sections, className, iconCustom, icon, unstacked }: IProps) => {
   const [activeIndex, setActiveIndex] = useState(defaultSection || 0);
   const navControlHandler = useCallback(
     (index) => {
@@ -15,6 +16,8 @@ const Component = ({ defaultSection, sections, className }: IProps) => {
     },
     [setActiveIndex],
   );
+
+  const CustomIconComponent = iconCustom ? iconCustom : null;
 
   return (
     <Fragment>
@@ -36,23 +39,25 @@ const Component = ({ defaultSection, sections, className }: IProps) => {
                   height="100%"
                   image={image}
                   fit={fit || 'contain'}
-                  alt={caption}
+                  alt={caption || href}
                 />
-                <Caption key={`info-${index}`}>
+                { !!caption ? <Caption unstacked={unstacked} key={`info-${index}`}>
                   {caption}
-                </Caption>
+                </Caption> : <></>}
               </Section>
             );
           })}
         </Container>
-        <Controls>
+        <Controls unstacked={unstacked}>
           <ul>
             {sections?.map((_, index) => (
               <Control key={`section-control-${index}`}>
                 <Button
                   active={activeIndex === index}
                   onClick={() => navControlHandler(index)}
-                >x</Button>
+                >
+                  {icon ? CustomIconComponent ? CustomIconComponent : <Icon icon={icon} /> : <></>}
+                </Button>
               </Control>
             ))}
           </ul>

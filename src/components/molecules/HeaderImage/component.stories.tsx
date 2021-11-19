@@ -14,7 +14,9 @@ Default.args = {
   defaultSection: 0,
   sections: [
     { href: '#1', newWindow: true, image: 'https://www.google.com/logos/doodles/2021/celebrating-johannes-vermeer-6753651837109124.3-l.webp', caption: 'Caption 1', fit: 'cover' },
-    { href: '#2', image: 'image-2', caption: 'Caption 2', fit: 'contain' },
+    { href: '#2', image: 'image-2', fit: 'contain' },
   ],
   className: '',
+  icon: 'mdiAbTesting',
+  unstacked: 'bottom',
 };
