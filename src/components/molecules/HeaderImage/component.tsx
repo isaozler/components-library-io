@@ -51,7 +51,7 @@ const Component = ({ defaultSection, sections, className, iconCustom, icon, unst
         <Controls unstacked={unstacked}>
           <ul>
             {sections?.map((_, index) => (
-              <Control key={`section-control-${index}`}>
+              <Control data-active={activeIndex === index} key={`section-control-${index}`}>
                 <Button
                   active={activeIndex === index}
                   onClick={() => navControlHandler(index)}
