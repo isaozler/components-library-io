@@ -46,7 +46,7 @@ export const Control = styled.li.attrs((props: IProps) => props)`
   }
 `;
 
-export const Button = styled.li.attrs((props: { active: boolean }) => props)`
+export const Button = styled.button.attrs((props: { active: boolean }) => props)`
   text-align: center;
   border: 0;
   outline: 0;
