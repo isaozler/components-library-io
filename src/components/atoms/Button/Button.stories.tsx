@@ -10,6 +10,8 @@ export default {
     backgroundColorHover: { control: 'color' },
     color: { control: 'color' },
     colorHover: { control: 'color' },
+    badgeTextColor: { control: 'color' },
+    badgeColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -54,6 +56,19 @@ WithIcon.args = {
   icon: 'mdiMagnify',
   label: 'Search',
   iconAlignment: 'left',
+  badge: 2,
+  badgeTextColor: 'white',
+  badgeColor: 'red',
+};
+
+export const WithIconBadge = Template.bind({});
+WithIconBadge.args = {
+  icon: 'mdiMagnify',
+  label: 'Search',
+  iconAlignment: 'left',
+  badge: true,
+  badgeTextColor: 'white',
+  badgeColor: 'red',
 };
 
 export const WithCustomIcon = Template.bind({});

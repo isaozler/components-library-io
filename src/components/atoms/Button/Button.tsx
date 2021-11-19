@@ -5,7 +5,7 @@ import ButtonProps from './schema';
 
 import { Component as Icon } from '@components/atoms/Icon/Icon';
 
-import { Button, ButtonLink, Label, Icon as IconWrapper } from './styles'
+import { Button, ButtonLink, Label, Icon as IconWrapper, Badge } from './styles'
 
 export const Component = (props: ButtonProps) => {
   const {
@@ -24,6 +24,9 @@ export const Component = (props: ButtonProps) => {
     underlined = false,
     underlinedHover = false,
     isNewWindow = false,
+    badge,
+    badgeTextColor,
+    badgeColor,
   } = props;
   const Component = type === 'link' ? ButtonLink : Button;
   const CustomIconComponent = iconCustom ? iconCustom : null;
@@ -52,6 +55,12 @@ export const Component = (props: ButtonProps) => {
             <IconWrapper label={label} iconAlignment={iconAlignment} size={size}>
               {
                 CustomIconComponent ? CustomIconComponent : <Icon icon={icon} />
+              }
+              {badge ?
+                <Badge badge={badge} color={badgeColor} badgeTextColor={badgeTextColor}>
+                  { typeof badge === 'boolean' ? '' : badge }
+                </Badge>
+                : <></>
               }
             </IconWrapper>
             : <></>

@@ -45,6 +45,9 @@ export interface ButtonProps {
   underlinedHover?: boolean;
   onClick?: () => void;
   iconAlignment?: 'left' | 'right';
+  badge?: number | string | boolean;
+  badgeTextColor?: string;
+  badgeColor?: string;
 }
 
 export default ButtonProps;

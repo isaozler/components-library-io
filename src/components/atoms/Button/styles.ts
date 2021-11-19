@@ -112,6 +112,7 @@ export const Label = styled.div.attrs((props: ButtonProps) => props)`
 `;
 
 export const Icon = styled.div.attrs((props: ButtonProps) => props)`
+  position: relative;
   width: calc(1.5 * var(--gutter));
   height: calc(1.5 * var(--gutter));
   
@@ -136,3 +137,37 @@ export const Icon = styled.div.attrs((props: ButtonProps) => props)`
       : ''
   }
 `;
+
+type BadgeType = {
+  badgeTextColor?: string;
+  badge: string | number | boolean;
+  color?: string;
+}
+
+export const Badge = styled.div.attrs((props: BadgeType) => props)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 100%;
+
+  ${({ badge }) => {
+    if (typeof badge === 'boolean') {
+      return css`
+        width: 10px;
+        height: 10px;
+      `
+    } else {
+      return css`
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        color: ${({ badgeTextColor }: BadgeType) => badgeTextColor || 'white'};
+      `
+    }
+  }}
+  
+  transform: translate(50%, -50%);
+  background: ${({ color }) => color || 'white'};
+`
