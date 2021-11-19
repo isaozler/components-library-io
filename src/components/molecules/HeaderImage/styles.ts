@@ -13,7 +13,7 @@ export const Wrapper = styled.div.attrs((props: IProps) => props)`
 
 export const Caption = styled.div.attrs((props: IProps) => props)`
   position: absolute;
-  bottom: ${({ unstacked }) => unstacked ? '40px' : 0};
+  bottom: ${({ unstacked }) => unstacked && unstacked === 'bottom' ? '40px' : 0};
   left: ${({ unstacked }) => unstacked && unstacked === 'left' ? '40px' : 0};
   width: calc(50% - 2 * var(--gutter));
   margin-left: calc(2 * var(--gutter));
