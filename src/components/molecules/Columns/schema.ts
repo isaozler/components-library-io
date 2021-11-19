@@ -7,6 +7,9 @@ export interface IProps {
   sizes?: number[] | string[];
   contents: ReactElement[];
   hasSpaceBetween?: boolean;
+  isScrollable?: boolean;
+  scrollHeight?: string;
+  visibleCols?: number;
 }
 
 export default IProps;

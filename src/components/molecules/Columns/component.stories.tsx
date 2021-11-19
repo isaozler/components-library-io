@@ -13,11 +13,31 @@ export const Default = Template.bind({});
 Default.args = {
   title: 'Columns Title',
   isVertical: false,
-  contents: [
-    <div>Column 1</div>,
-    <div>Column 2</div>,
-    <div>Column 3</div>,
-  ],
+  contents: Array.from({ length: 10 }).map((_, index) => <div style={{ height: '100px' }}>Horizontal Column {index + 1}</div>),
   hasSpaceBetween: true,
-  sizes: ['20%', '20%', '60%'],
+  sizes: Array.from({ length: 10 }).map((_) => '100px'),
+};
+
+export const Horizonal = Template.bind({});
+Horizonal.args = {
+  title: 'Columns Title',
+  isVertical: false,
+  contents: Array.from({ length: 10 }).map((_, index) => <div style={{ height: '100px' }}>Horizontal Column {index + 1}</div>),
+  hasSpaceBetween: true,
+  sizes: Array.from({ length: 10 }).map((_) => '100px'),
+  isScrollable: true,
+  visibleCols: 3,
+  scrollHeight: '300px',
+};
+
+export const Vertical = Template.bind({});
+Vertical.args = {
+  title: 'Columns Title',
+  isVertical: true,
+  contents: Array.from({ length: 10 }).map((_, index) => <div style={{ height: '100%' }}>Vertical Column {index + 1}</div>),
+  hasSpaceBetween: true,
+  sizes: Array.from({ length: 10 }).map((_) => '100px'),
+  isScrollable: true,
+  visibleCols: 3,
+  scrollHeight: '300px',
 };

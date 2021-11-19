@@ -7,8 +7,34 @@ export const Wrapper = styled.div.attrs((props: IProps) => props)`
   width: 100%;
   height: 100%;
 
-  ${({ isVertical }) => isVertical ? css`
+  ${({ isVertical, scrollHeight }) => isVertical ? css`
+    height: ${scrollHeight || '100%'};
     flex-direction: column;
+  ` : ''}
+  
+  ${({ isScrollable, isVertical }) => isScrollable ? css`
+    ${isVertical
+      ? css`
+          overflow-x: auto;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+
+          ${ScrollContainer} {
+            flex-direction: column;
+          }
+        `
+      : css`
+          overflow-x: scroll;
+          overflow-y: auto;
+          scroll-snap-type: x mandatory;
+        `
+    }
+  
+    padding-bottom: 0.1rem;
+    transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+    -ms-scroll-chaining: chained;
+    transform-style: preserve-3d;
   ` : ''}
 `;
 
@@ -25,17 +51,36 @@ export const Column = styled.div.attrs((props: IProps) => props)`
     }
   ` : ''}
 
-  ${({ isVertical, sizes }: IProps) =>
+  ${({ isVertical, sizes, visibleCols }: IProps) =>
     isVertical
       ? sizes?.map((size, index) => css`
           &:nth-child(${index + 1}) {
-            height: ${size};
+            height: ${visibleCols ? `${size}px` : size};
           }
         `)
       : sizes?.map((size, index) => css`
           &:nth-child(${index + 1}) {
-            width: ${size};
+            width: ${visibleCols ? `${size}px` : size};
           }
         `)
   }
+
+  ${({ isScrollable }) => isScrollable ? css`
+    scroll-snap-align: start;
+  ` : ''}
+
+  ${({ isVertical, isScrollable }) => isVertical ? css`
+    ${isScrollable ? css`flex-shrink: 0;` : ''}
+  ` : ''}
 `;
+
+export const ScrollContainer = styled.div.attrs((props: IProps) => props)`
+  display: inline-flex;
+  flex-direction: row;
+  height: 100%;
+  white-space: nowrap;
+
+  ${({ isVertical }) => isVertical ? css`
+    flex-direction: column;
+  ` : ''}
+`
