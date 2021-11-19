@@ -49,14 +49,14 @@ export const Component = (props: ButtonProps) => {
       >
         {
           icon || CustomIconComponent ?
-            <IconWrapper iconAlignment={iconAlignment} size={size}>
+            <IconWrapper label={label} iconAlignment={iconAlignment} size={size}>
               {
                 CustomIconComponent ? CustomIconComponent : <Icon icon={icon} />
               }
             </IconWrapper>
             : <></>
         }
-        <Label iconAlignment={iconAlignment}>{label}</Label>
+        {!!label ? <Label iconAlignment={iconAlignment}>{label}</Label> : <></>}
       </Component>
     </Fragment>
   );

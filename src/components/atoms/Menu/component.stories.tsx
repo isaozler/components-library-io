@@ -16,8 +16,17 @@ Default.args = {
   isFullWidth: true,
   menu: [
     {
+      "label": "Link 0",
+      "href": "/link-0",
+      "target": "_blank",
+    },
+    {
       "label": "Link 1",
       "href": "/link-1",
+      "onClick": (e:any) => {
+        e.preventDefault();
+        console.log('asdasdas',e)
+      },
     },
     {
       "label": "Link 2",

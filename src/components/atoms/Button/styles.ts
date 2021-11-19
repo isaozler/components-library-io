@@ -114,16 +114,18 @@ export const Label = styled.div.attrs((props: ButtonProps) => props)`
 export const Icon = styled.div.attrs((props: ButtonProps) => props)`
   width: calc(1.5 * var(--gutter));
   height: calc(1.5 * var(--gutter));
-  margin-left: 0;
-  margin-right: var(--gutter);
-
-  ${({ iconAlignment }) =>
-    iconAlignment === 'right'
+  
+  ${({ iconAlignment, label }) =>
+    !!label ? iconAlignment === 'right'
       ? css`
           margin-left: var(--gutter);
           margin-right: 0;
         `
-      : ''
+      : css`
+          margin-left: 0;
+          margin-right: var(--gutter);
+        `
+      : css` margin: 0;`
   }
   ${({ size }) =>
     size === 'large'
