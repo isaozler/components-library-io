@@ -15,7 +15,7 @@ export const Wrapper = styled.div.attrs((props: IProps) => props)`
   ${({ isScrollable, isVertical }) => isScrollable ? css`
     ${isVertical
       ? css`
-          overflow-x: auto;
+          overflow-x: hidden;
           overflow-y: scroll;
           scroll-snap-type: y mandatory;
 
@@ -25,7 +25,7 @@ export const Wrapper = styled.div.attrs((props: IProps) => props)`
         `
       : css`
           overflow-x: scroll;
-          overflow-y: auto;
+          overflow-y: hidden;
           scroll-snap-type: x mandatory;
         `
     }
