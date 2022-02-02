@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import dayjs from 'dayjs';
-import GlobalStyle from '@components/globalStyle';
 
-import IProps from './schema';
+import IProps from './component.types';
 import { Wrapper, Time, Day, Month, Content } from './styles';
 
 const Component = ({ dateTime, title, text, className }: IProps) => {
@@ -14,7 +13,6 @@ const Component = ({ dateTime, title, text, className }: IProps) => {
 
   return (
     <Fragment>
-      <GlobalStyle />
       <Wrapper className={className}>
         <Time dateTime={date.toISOString()}>
           <Day>{day}</Day>

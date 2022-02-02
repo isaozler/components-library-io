@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import IProps from './schema';
+import IProps from './component.types';
 
 export const Ul = styled.ul.attrs((props: IProps) => props)`
   display: flex;

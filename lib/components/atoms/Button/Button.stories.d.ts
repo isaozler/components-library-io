@@ -1,0 +1,10 @@
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export default _default;
+export declare const Default: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export declare const Bordered: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export declare const CustomHover: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export declare const WithIcon: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export declare const WithIconBadge: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export declare const WithCustomIcon: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;
+export declare const LinkWithIcon: ComponentStory<(props: import("./Button.types").ButtonProps) => JSX.Element>;

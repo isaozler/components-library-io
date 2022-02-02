@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import ButtonProps from './schema';
+import ButtonProps from './Button.types';
 
 export const ButtonSizes = {
   small: css`

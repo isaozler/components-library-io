@@ -3,6 +3,7 @@ export type TFit = 'cover' | 'contain' | 'fill';
 export interface IProps {
   className?: string;
   image: string;
+  title?: string;
   alt?: string;
   width?: string;
   height?: string;

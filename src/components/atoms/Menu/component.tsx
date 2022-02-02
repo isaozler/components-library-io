@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import GlobalStyle from '@components/globalStyle';
 
-import IProps from './schema';
+import IProps from './component.types';
 
 import { Menu, Ul, Li, A } from './styles';
 
@@ -53,7 +52,6 @@ const UlTreeBuilder = ({ id, arrObjs, isRoot, isFullWidth }: { id: string, arrOb
 const Component = ({ id, className, menu, isFullWidth }: IProps) => {
   return (
     <Fragment>
-      <GlobalStyle />
       <Menu className={className}>
         {menu.length ? UlTreeBuilder({ id, arrObjs: menu, isRoot: true, isFullWidth }) : <></>}
       </Menu>

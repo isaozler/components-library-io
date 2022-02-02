@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { TFit } from '@components/atoms/Image/schema';
+import { TFit } from '@components/atoms/Image/component.types';
 
 export interface IProps {
   className?: string;

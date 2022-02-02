@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react';
-import GlobalStyle from '@components/globalStyle';
 
 import ImageComponent from '@components/atoms/Image/component';
 
-import IProps from './schema';
+import IProps from './component.types';
 
 import { Wrapper, Column } from './styles';
 
@@ -24,7 +23,6 @@ const Component = ({
 }: IProps) => {
   return (
     <Fragment>
-      <GlobalStyle />
       <Wrapper className={className} isVertical={isVertical}>
         {(title && <h1>{title}</h1>) || <></>}
         <ImageComponent

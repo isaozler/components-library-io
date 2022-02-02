@@ -9,12 +9,11 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app"
   ],
   webpackFinal: async (config) => {
     config.resolve.plugins = [
       new TsconfigPathsPlugin({
-        configFile: path.resolve(__dirname, '../tsconfig.json')
+        configFile: path.resolve(__dirname, '../storybook.tsconfig.json')
       }),
     ];
 

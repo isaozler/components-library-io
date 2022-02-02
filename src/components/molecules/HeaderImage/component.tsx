@@ -1,10 +1,9 @@
 import React, { Fragment, useCallback, useState } from 'react';
-import GlobalStyle from '@components/globalStyle';
 
 import ImageComponent from '@components/atoms/Image/component';
 import { Component as Icon } from '@components/atoms/Icon/Icon';
 
-import IProps from './schema';
+import IProps from './component.types';
 
 import { Wrapper, Container, Controls, Control, Section, Caption, Button } from './styles';
 
@@ -21,7 +20,6 @@ const Component = ({ defaultSection, sections, className, iconCustom, icon, unst
 
   return (
     <Fragment>
-      <GlobalStyle />
       <Wrapper className={className}>
         <Container>
           {sections?.map(({ image, caption, fit, href, newWindow }, index) => {
@@ -41,7 +39,7 @@ const Component = ({ defaultSection, sections, className, iconCustom, icon, unst
                   fit={fit || 'contain'}
                   alt={caption || href}
                 />
-                { !!caption ? <Caption unstacked={unstacked} key={`info-${index}`}>
+                {!!caption ? <Caption unstacked={unstacked} key={`info-${index}`}>
                   {caption}
                 </Caption> : <></>}
               </Section>

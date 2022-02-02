@@ -48,6 +48,7 @@ export interface ButtonProps {
   badge?: number | string | boolean;
   badgeTextColor?: string;
   badgeColor?: string;
+  isDisabled?: boolean;
 }
 
 export default ButtonProps;

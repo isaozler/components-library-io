@@ -1,16 +1,14 @@
 import React, { Fragment } from 'react';
-import GlobalStyle from '@components/globalStyle';
 
 import ColumnsComponent from '@components/molecules/Columns/component';
 
-import IProps from './schema';
+import IProps from './component.types';
 
 import { Wrapper, Spotlight, Items, SpotlightItem } from './styles';
 
 const Component = ({ className, title, contents, spotlight, sizes, hasSpaceBetween, isReversed }: IProps) => {
   return (
     <Fragment>
-      <GlobalStyle />
       <Wrapper className={className}>
         {(title && <h1>{title}</h1>) || <></>}
         <Spotlight hasSpaceBetween={hasSpaceBetween} isReversed={isReversed}>

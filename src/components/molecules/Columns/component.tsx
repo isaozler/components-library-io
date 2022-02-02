@@ -1,15 +1,13 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
-import GlobalStyle from '@components/globalStyle';
-
-import IProps from './schema';
+import IProps from './component.types';
 
 import { Wrapper, Column, ScrollContainer } from './styles';
 
 type TViewPort = {
   width: number;
   height: number;
-  colWidth: number; 
-  colHeight: number; 
+  colWidth: number;
+  colHeight: number;
 }
 
 const Component = ({
@@ -32,11 +30,11 @@ const Component = ({
       setViewport(() => ({
         width: wrapperEl?.current?.offsetWidth || 0,
         height: wrapperEl?.current?.offsetHeight || 0,
-        colWidth: 
+        colWidth:
           _visibleCols && wrapperEl?.current && !isVertical
             ? wrapperEl?.current?.offsetWidth / _visibleCols
             : 0,
-        colHeight: 
+        colHeight:
           _visibleCols && wrapperEl?.current && isVertical
             ? wrapperEl?.current?.offsetHeight / _visibleCols
             : 0,
@@ -45,7 +43,7 @@ const Component = ({
   }, [wrapperEl, _visibleCols, isVertical])
 
   const columnsComponent = Array.from({ length: contents.length }).map((_, index) => {
-    sizes = 
+    sizes =
       !isScrollable && !visibleCols && viewPort
         ? sizes
         : [...contents].map((_) => isVertical
@@ -57,7 +55,7 @@ const Component = ({
         key={`column-content--${index}`}
         isVertical={isVertical}
         hasSpaceBetween={hasSpaceBetween}
-        isScrollable={isScrollable} 
+        isScrollable={isScrollable}
         sizes={sizes}
         visibleCols={visibleCols}
       >
@@ -68,7 +66,6 @@ const Component = ({
 
   return (
     <Fragment>
-      <GlobalStyle />
       {title ? <h1>{title}</h1> : <></>}
       <Wrapper
         ref={wrapperEl}

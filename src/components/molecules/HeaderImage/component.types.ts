@@ -1,4 +1,4 @@
-import { TFit } from '@components/atoms/Image/schema';
+import { TFit } from '@components/atoms/Image/component.types';
 import { IconsK } from '@components/atoms/Icon/Icon';
 
 type TPosition = 'bottom' | 'left' | 'top' | 'right'

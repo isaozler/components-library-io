@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "rootDir": "src",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,15 +15,31 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@types/*": ["src/@types/*"]
-    },
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist/@types"
+    "lib": [
+      "es6",
+      "dom",
+      "es2016",
+      "es2017"
+    ],
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ]
+    }
   },
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "src/**/*.test.tsx"
   ]
 }

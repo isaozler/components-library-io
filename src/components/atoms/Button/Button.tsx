@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
-import GlobalStyle from '@components/globalStyle';
 
-import ButtonProps from './schema';
+import ButtonProps from './Button.types';
 
 import { Component as Icon } from '@components/atoms/Icon/Icon';
 
@@ -27,13 +26,13 @@ export const Component = (props: ButtonProps) => {
     badge,
     badgeTextColor,
     badgeColor,
+    isDisabled = false,
   } = props;
   const Component = type === 'link' ? ButtonLink : Button;
   const CustomIconComponent = iconCustom ? iconCustom : null;
 
   return (
     <Fragment>
-      <GlobalStyle />
       <Component
         className={className}
         type="button"
@@ -48,6 +47,7 @@ export const Component = (props: ButtonProps) => {
         underlinedHover={underlinedHover}
         target={isNewWindow ? '_blank' : ''}
         rel={isNewWindow ? 'noreferrer' : ''}
+        disabled={isDisabled}
         {...props}
       >
         {
@@ -58,7 +58,7 @@ export const Component = (props: ButtonProps) => {
               }
               {badge ?
                 <Badge badge={badge} color={badgeColor} badgeTextColor={badgeTextColor}>
-                  { typeof badge === 'boolean' ? '' : badge }
+                  {typeof badge === 'boolean' ? '' : badge}
                 </Badge>
                 : <></>
               }
