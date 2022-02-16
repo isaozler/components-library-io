@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 import IProps from './component.types';
 
-export const Wrapper = styled.div.attrs((props: IProps) => props)`
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const Columns = styled.div.attrs((props: IProps) => props)`
   display: flex;
   flex-direction: row;
   width: 100%;

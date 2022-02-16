@@ -6,7 +6,7 @@ export interface ButtonProps {
    */
   backgroundColor?: string;
   backgroundColorHover?: string;
-  type?: 'link' | 'button';
+  type?: 'link' | 'button' | 'submit' | 'reset';
   /**
    * How large should the button be?
    */

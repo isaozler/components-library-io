@@ -9,11 +9,16 @@ export default {
 
 const Template: ComponentStory<typeof Component> = (args) => <Component {...args} />;
 
+const DivWrapper = ({ children }: any) => {
+  return <div>{children}</div>
+}
+
 export const Default = Template.bind({});
 Default.args = {
   id: 'main-nav',
   className: '',
   isFullWidth: true,
+  linkWrapper: DivWrapper,
   menu: [
     {
       "label": "Link 0",

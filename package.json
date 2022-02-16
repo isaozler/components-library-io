@@ -1,6 +1,6 @@
 {
   "name": "components-library-io",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "typings": "lib/index.d.ts",
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "npm run clean && npm --no-git-tag-version version patch && rollup -c && npm pack",
+    "local-build": "npm run clean && rollup -c && npm pack",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf lib ./*.tgz"

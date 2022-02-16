@@ -7,7 +7,7 @@ export interface ButtonProps {
      */
     backgroundColor?: string;
     backgroundColorHover?: string;
-    type?: 'link' | 'button';
+    type?: 'link' | 'button' | 'submit' | 'reset';
     /**
      * How large should the button be?
      */
@@ -49,5 +49,6 @@ export interface ButtonProps {
     badge?: number | string | boolean;
     badgeTextColor?: string;
     badgeColor?: string;
+    isDisabled?: boolean;
 }
 export default ButtonProps;

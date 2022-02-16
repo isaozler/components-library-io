@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import IProps from './component.types';
 
-import { Wrapper, Column, ScrollContainer } from './styles';
+import { Wrapper, Columns, Column, ScrollContainer } from './styles';
 
 type TViewPort = {
   width: number;
@@ -65,12 +65,11 @@ const Component = ({
   })
 
   return (
-    <Fragment>
+    <Wrapper className={className}>
       {title ? <h1>{title}</h1> : <></>}
-      <Wrapper
+      <Columns
         ref={wrapperEl}
         isScrollable={isScrollable}
-        className={className}
         isVertical={isVertical}
         scrollHeight={scrollHeight}
       >
@@ -85,8 +84,8 @@ const Component = ({
             {columnsComponent.map(column => column)}
           </>
         }
-      </Wrapper>
-    </Fragment>
+      </Columns>
+    </Wrapper>
   );
 };
 
