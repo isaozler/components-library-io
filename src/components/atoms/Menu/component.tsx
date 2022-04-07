@@ -81,11 +81,21 @@ const UlTreeBuilder = (
 const Component = ({ id, className, menu, isFullWidth, linkWrapper }: IProps) => {
   return (
     <Fragment>
-      <Menu className={className}>
-        {menu.length ? UlTreeBuilder({ id, arrObjs: menu, isRoot: true, isFullWidth, linkWrapper }) : <></>}
+      <Menu className={[className, 'menu-wrapper'].join(' ')}>
+        {menu.length ? (
+          UlTreeBuilder({
+            id,
+            arrObjs: menu,
+            isRoot: true,
+            isFullWidth,
+            linkWrapper,
+          })
+        ) : (
+          <></>
+        )}
       </Menu>
     </Fragment>
-  );
+  )
 };
 
 export default Component;

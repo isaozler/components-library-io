@@ -13,19 +13,16 @@ const Component = ({
   contents,
   hasSpaceBetween,
   isVertical,
-  image: {
-    caption,
-    image,
-    fit,
-    href,
-    newWindow
-  }
+  image: { caption, image, fit, href, newWindow },
+  linkWrapper,
+  innerRef,
 }: IProps) => {
   return (
     <Fragment>
       <Wrapper className={className} isVertical={isVertical}>
         {(title && <h1>{title}</h1>) || <></>}
         <ImageComponent
+          className="imagetext-image"
           href={href}
           newWindow={newWindow}
           width="100%"
@@ -33,10 +30,13 @@ const Component = ({
           image={image}
           fit={fit || 'contain'}
           alt={caption}
+          linkWrapper={linkWrapper}
+          innerRef={innerRef}
         />
         {Array.from({ length: contents.length }).map((_, index) => {
           return (
             <Column
+              className="imagetext-column"
               key={`column-content--${index}`}
               isVertical={isVertical}
               hasSpaceBetween={hasSpaceBetween}
@@ -44,11 +44,11 @@ const Component = ({
             >
               {contents[index]}
             </Column>
-          );
+          )
         })}
       </Wrapper>
     </Fragment>
-  );
-};
+  )
+}
 
 export default Component;

@@ -5,8 +5,10 @@ type TPosition = 'bottom' | 'left' | 'top' | 'right'
 export interface IProps {
   defaultSection?: number;
   sections: {
-    image: string;
+    title: string;
     caption?: string;
+    excerpt?: string;
+    image: string;
     fit?: TFit;
     href?: string;
     newWindow?: boolean;

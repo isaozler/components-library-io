@@ -21,22 +21,37 @@ const Component = ({ defaultSection, sections, className, iconCustom, icon, unst
     <Fragment>
       <Wrapper className={className}>
         {title ? <h1>{title}</h1> : <></>}
-        <Container>
-          {sections?.map((component, index) => <Section
-            active={activeIndex === index}
-            key={`section--${index}`}
-            style={{}}>{component}</Section>
-          )}
+        <Container className="container">
+          {sections?.map((component, index) => (
+            <Section
+              active={activeIndex === index}
+              key={`section--${index}`}
+              style={{}}
+            >
+              {component}
+            </Section>
+          ))}
         </Container>
-        <Controls unstacked={unstacked}>
+        <Controls className="controls" unstacked={unstacked}>
           <ul>
             {sections?.map((_, index) => (
-              <Control data-active={activeIndex === index} key={`section-control-${index}`}>
+              <Control
+                data-active={activeIndex === index}
+                key={`section-control-${index}`}
+              >
                 <Button
                   active={activeIndex === index}
                   onClick={() => navControlHandler(index)}
                 >
-                  {icon ? CustomIconComponent ? CustomIconComponent : <Icon icon={icon} /> : <></>}
+                  {icon ? (
+                    CustomIconComponent ? (
+                      CustomIconComponent
+                    ) : (
+                      <Icon icon={icon} />
+                    )
+                  ) : (
+                    <></>
+                  )}
                 </Button>
               </Control>
             ))}
@@ -44,7 +59,7 @@ const Component = ({ defaultSection, sections, className, iconCustom, icon, unst
         </Controls>
       </Wrapper>
     </Fragment>
-  );
+  )
 };
 
 export default Component;

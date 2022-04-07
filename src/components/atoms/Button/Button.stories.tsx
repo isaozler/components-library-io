@@ -88,6 +88,23 @@ WithCustomIcon.args = {
   iconAlignment: 'right',
 };
 
+const LinkWrapper = ({ children, href }: any) => {
+  return <div className="custom-wrapper" data-href={href}>{children}</div>
+}
+
+export const LinkWithWrapper = Template.bind({});
+LinkWithWrapper.args = {
+  type: 'link',
+  href: '#',
+  underlined: true,
+  underlinedHover: false,
+  icon: 'mdiMagnify',
+  label: 'Search',
+  iconAlignment: 'right',
+  isNewWindow: true,
+  linkWrapper: LinkWrapper
+};
+
 export const LinkWithIcon = Template.bind({});
 LinkWithIcon.args = {
   type: 'link',

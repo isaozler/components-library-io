@@ -1,3 +1,4 @@
+import { ForwardedRef, FunctionComponent } from "react";
 export declare type TFit = 'cover' | 'contain' | 'fill';
 export interface IProps {
     className?: string;
@@ -9,5 +10,8 @@ export interface IProps {
     href?: string;
     newWindow?: boolean;
     fit: TFit;
+    linkWrapper?: FunctionComponent<any>;
+    innerRef?: ForwardedRef<any>;
+    ref?: ForwardedRef<any>;
 }
 export default IProps;

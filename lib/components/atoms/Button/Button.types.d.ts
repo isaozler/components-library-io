@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { ForwardedRef, FunctionComponent } from 'react';
 import { IconsK } from '../Icon/Icon';
 export interface ButtonProps {
     className?: string;
@@ -50,5 +50,8 @@ export interface ButtonProps {
     badgeTextColor?: string;
     badgeColor?: string;
     isDisabled?: boolean;
+    linkWrapper?: FunctionComponent<any>;
+    innerRef?: ForwardedRef<any>;
+    ref?: ForwardedRef<any>;
 }
 export default ButtonProps;

@@ -55,3 +55,6 @@ export const Content = styled.div.attrs((_: IProps) => ({}))`
   }
 `;
 
+export const Links = styled.div`
+
+`

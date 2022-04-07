@@ -3,6 +3,7 @@ export interface IProps {
   title: string;
   text: string;
   className?: string;
+  links?: JSX.Element;
 }
 
 export default IProps;

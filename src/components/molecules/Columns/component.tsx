@@ -68,25 +68,24 @@ const Component = ({
     <Wrapper className={className}>
       {title ? <h1>{title}</h1> : <></>}
       <Columns
+        className="columns"
         ref={wrapperEl}
         isScrollable={isScrollable}
         isVertical={isVertical}
         scrollHeight={scrollHeight}
       >
-        {isScrollable
-          ?
+        {isScrollable ? (
           <>
             <ScrollContainer>
-              {columnsComponent.map(column => column)}
+              {columnsComponent.map((column) => column)}
             </ScrollContainer>
           </>
-          : <>
-            {columnsComponent.map(column => column)}
-          </>
-        }
+        ) : (
+          <>{columnsComponent.map((column) => column)}</>
+        )}
       </Columns>
     </Wrapper>
-  );
+  )
 };
 
 export default Component;

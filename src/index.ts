@@ -8,6 +8,7 @@ import EventItem from './components/atoms/EventItem/component';
 import Icon from './components/atoms/Icon/Icon';
 import Image from './components/atoms/Image/component';
 import Menu from './components/atoms/Menu/component';
+import LinkWrapper from './components/atoms/LinkWrapper/component';
 
 // Molecules
 import Carousel from './components/molecules/Carousel/component';
@@ -25,6 +26,7 @@ export {
   Icon,
   Image,
   Menu,
+  LinkWrapper,
   // 
   Carousel,
   Collage,

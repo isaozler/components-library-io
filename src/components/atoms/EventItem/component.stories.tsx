@@ -15,4 +15,9 @@ Default.args = {
   dateTime: '2020-12-22',
   text: 'Description',
   className: '',
-};
+  links: (
+    <div>
+      <a href="#asd">LINK</a>
+    </div>
+  ),
+}

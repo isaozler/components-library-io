@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ForwardedRef, FunctionComponent, ReactElement } from "react";
 
 import { TFit } from '@components/atoms/Image/component.types';
 
@@ -16,6 +16,9 @@ export interface IProps {
     href?: string;
     newWindow?: boolean;
   }
+  linkWrapper?: FunctionComponent<any>;
+  innerRef?: ForwardedRef<any>;
+  ref?: ForwardedRef<any>;
 }
 
 export default IProps;

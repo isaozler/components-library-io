@@ -11,19 +11,27 @@ const Component = ({ className, title, contents, spotlight, sizes, hasSpaceBetwe
     <Fragment>
       <Wrapper className={className}>
         {(title && <h1>{title}</h1>) || <></>}
-        <Spotlight hasSpaceBetween={hasSpaceBetween} isReversed={isReversed}>
-          <Items sizes={sizes}>
+        <Spotlight
+          className="spotlight"
+          hasSpaceBetween={hasSpaceBetween}
+          isReversed={isReversed}
+        >
+          <Items className="spotlight-items" sizes={sizes}>
             {(contents?.length && (
-              <ColumnsComponent isVertical={true} contents={contents} hasSpaceBetween={true} />
+              <ColumnsComponent
+                isVertical={true}
+                contents={contents}
+                hasSpaceBetween={true}
+              />
             )) || <></>}
           </Items>
-          <SpotlightItem sizes={sizes}>
+          <SpotlightItem className="spotlight-item" sizes={sizes}>
             {spotlight}
           </SpotlightItem>
         </Spotlight>
       </Wrapper>
     </Fragment>
-  );
+  )
 };
 
 export default Component;
