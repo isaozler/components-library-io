@@ -1,6 +1,6 @@
 {
   "name": "components-library-io",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
   "typings": "lib/index.d.ts",

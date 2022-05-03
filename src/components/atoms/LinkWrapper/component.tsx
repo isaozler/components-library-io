@@ -1,31 +1,33 @@
-import React, { Fragment } from 'react'
+import React, { ForwardedRef, Fragment } from 'react'
 import ComponentProps from './component.types'
 import { Link } from './styles'
 
-const LinkComponent = (props: ComponentProps) => {
-  const {
-    children,
-    className,
-    isNewWindow = false,
-    linkWrapper,
-    innerRef,
-  } = props
+const LinkComponent = React.forwardRef(
+  (props: ComponentProps, ref: ForwardedRef<any>) => {
+    const {
+      children,
+      className,
+      isNewWindow = false,
+      linkWrapper,
+      // innerRef,
+    } = props
 
-  return (
-    <Fragment>
-      <Link
-        {...props}
-        className={className}
-        target={isNewWindow ? '_blank' : ''}
-        rel={isNewWindow ? 'noreferrer' : ''}
-        linkWrapper={linkWrapper}
-        innerRef={innerRef}
-      >
-        {children}
-      </Link>
-    </Fragment>
-  )
-}
+    return (
+      <Fragment>
+        <Link
+          {...props}
+          className={className}
+          target={isNewWindow ? '_blank' : ''}
+          rel={isNewWindow ? 'noreferrer' : ''}
+          linkWrapper={linkWrapper}
+          innerRef={ref}
+        >
+          {children}
+        </Link>
+      </Fragment>
+    )
+  },
+)
 
 export const Component = (props: ComponentProps) => {
   const { linkWrapper: LinkWrapper, href, innerRef, rel } = props
