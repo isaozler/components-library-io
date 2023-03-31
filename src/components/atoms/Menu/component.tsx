@@ -67,7 +67,15 @@ const UlTreeBuilder = (
 
     if (arrObjs[i].children) {
       let ulWithChildren = UlTreeBuilder({ id, isRoot, arrObjs: arrObjs[i].children, linkWrapper })
-      liSingle = LiCreator(arrObjs[i].label, '#', arrObjs[i].target, arrObjs[i].onClick, ulWithChildren, { isRoot, isFullWidth }, linkWrapper);
+      liSingle = LiCreator(
+        arrObjs[i].label,
+        arrObjs[i].href,
+        arrObjs[i].target,
+        arrObjs[i].onClick,
+        ulWithChildren,
+        { isRoot, isFullWidth },
+        linkWrapper,
+      )
     } else {
       liSingle = LiCreator(arrObjs[i].label, arrObjs[i].href, arrObjs[i].target, arrObjs[i].onClick, undefined, { isRoot, isFullWidth }, linkWrapper);
     }

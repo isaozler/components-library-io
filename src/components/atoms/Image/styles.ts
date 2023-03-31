@@ -16,4 +16,5 @@ export const Image = styled.img.attrs((props: IProps) => props)`
   width: 100%;
   height: 100%;
   object-fit: ${({ fit }) => fit || 'contain'};
+  /* aspect-ratio: attr(width) / attr(height); */
 `;
