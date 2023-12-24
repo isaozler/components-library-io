@@ -1,4 +1,4 @@
-import React, { ForwardedRef, Fragment } from 'react'
+import React, { ForwardedRef } from 'react'
 import ButtonProps from './Button.types'
 import { Component as Icon } from '@components/atoms/Icon/Icon'
 import { Button, ButtonLink, Label, Icon as IconWrapper, Badge } from './styles'
@@ -28,50 +28,48 @@ const ButtonComponent = (props: ButtonProps) => {
     innerRef,
   } = props
   const Component = type === 'link' ? ButtonLink : Button
-  const CustomIconComponent = iconCustom ? iconCustom : null
+  const CustomIconComponent = iconCustom ?? null
 
   return (
-    <Fragment>
-      <Component
-        {...props}
-        className={[className, 'button--wrapper'].join(' ')}
-        type={type}
-        backgroundColor={backgroundColor}
-        size={size}
-        color={color}
-        colorHover={colorHover}
-        border={border}
-        isFullWidth={isFullWidth}
-        iconAlignment={iconAlignment}
-        underlined={underlined}
-        underlinedHover={underlinedHover}
-        target={isNewWindow ? '_blank' : ''}
-        rel={isNewWindow ? 'noreferrer' : ''}
-        disabled={isDisabled}
-        linkWrapper={linkWrapper}
-        innerRef={innerRef}
-      >
-        {icon || CustomIconComponent ? (
-          <IconWrapper label={label} iconAlignment={iconAlignment} size={size}>
-            {CustomIconComponent ? CustomIconComponent : <Icon icon={icon} />}
-            {badge ? (
-              <Badge
-                badge={badge}
-                color={badgeColor}
-                badgeTextColor={badgeTextColor}
-              >
-                {typeof badge === 'boolean' ? '' : badge}
-              </Badge>
-            ) : (
-              <></>
-            )}
-          </IconWrapper>
-        ) : (
-          <></>
-        )}
-        {!!label ? <Label iconAlignment={iconAlignment}>{label}</Label> : <></>}
-      </Component>
-    </Fragment>
+    <Component
+      {...props}
+      className={[className, 'button--wrapper'].join(' ')}
+      type={type}
+      backgroundColor={backgroundColor}
+      size={size}
+      color={color}
+      colorHover={colorHover}
+      border={border}
+      isFullWidth={isFullWidth}
+      iconAlignment={iconAlignment}
+      underlined={underlined}
+      underlinedHover={underlinedHover}
+      target={isNewWindow ? '_blank' : ''}
+      rel={isNewWindow ? 'noreferrer' : ''}
+      isDisabled={isDisabled}
+      linkWrapper={linkWrapper}
+      innerRef={innerRef}
+    >
+      {icon || CustomIconComponent ? (
+        <IconWrapper label={label} iconAlignment={iconAlignment} size={size}>
+          {CustomIconComponent ?? <Icon icon={icon} />}
+          {badge ? (
+            <Badge
+              badge={badge}
+              color={badgeColor}
+              badgeTextColor={badgeTextColor}
+            >
+              {typeof badge === 'boolean' ? '' : badge}
+            </Badge>
+          ) : (
+            <></>
+          )}
+        </IconWrapper>
+      ) : (
+        <></>
+      )}
+      {label ? <Label iconAlignment={iconAlignment}>{label}</Label> : <></>}
+    </Component>
   )
 }
 
@@ -101,58 +99,48 @@ const RefButtonComponent = React.forwardRef(
       // innerRef,
     } = props
     const Component = type === 'link' ? ButtonLink : Button
-    const CustomIconComponent = iconCustom ? iconCustom : null
+    const CustomIconComponent = iconCustom ?? null
 
     return (
-      <Fragment>
-        <Component
-          {...props}
-          className={[className, 'button--wrapper'].join(' ')}
-          type={type}
-          backgroundColor={backgroundColor}
-          size={size}
-          color={color}
-          colorHover={colorHover}
-          border={border}
-          isFullWidth={isFullWidth}
-          iconAlignment={iconAlignment}
-          underlined={underlined}
-          underlinedHover={underlinedHover}
-          target={isNewWindow ? '_blank' : ''}
-          rel={isNewWindow ? 'noreferrer' : ''}
-          disabled={isDisabled}
-          linkWrapper={linkWrapper}
-          innerRef={ref}
-        >
-          {icon || CustomIconComponent ? (
-            <IconWrapper
-              label={label}
-              iconAlignment={iconAlignment}
-              size={size}
-            >
-              {CustomIconComponent ? CustomIconComponent : <Icon icon={icon} />}
-              {badge ? (
-                <Badge
-                  badge={badge}
-                  color={badgeColor}
-                  badgeTextColor={badgeTextColor}
-                >
-                  {typeof badge === 'boolean' ? '' : badge}
-                </Badge>
-              ) : (
-                <></>
-              )}
-            </IconWrapper>
-          ) : (
-            <></>
-          )}
-          {!!label ? (
-            <Label iconAlignment={iconAlignment}>{label}</Label>
-          ) : (
-            <></>
-          )}
-        </Component>
-      </Fragment>
+      <Component
+        {...props}
+        className={[className, 'button--wrapper'].join(' ')}
+        type={type}
+        backgroundColor={backgroundColor}
+        size={size}
+        color={color}
+        colorHover={colorHover}
+        border={border}
+        isFullWidth={isFullWidth}
+        iconAlignment={iconAlignment}
+        underlined={underlined}
+        underlinedHover={underlinedHover}
+        target={isNewWindow ? '_blank' : ''}
+        rel={isNewWindow ? 'noreferrer' : ''}
+        isDisabled={isDisabled}
+        linkWrapper={linkWrapper}
+        innerRef={ref}
+      >
+        {icon || CustomIconComponent ? (
+          <IconWrapper label={label} iconAlignment={iconAlignment} size={size}>
+            {CustomIconComponent ?? <Icon icon={icon} />}
+            {badge ? (
+              <Badge
+                badge={badge}
+                color={badgeColor}
+                badgeTextColor={badgeTextColor}
+              >
+                {typeof badge === 'boolean' ? '' : badge}
+              </Badge>
+            ) : (
+              <></>
+            )}
+          </IconWrapper>
+        ) : (
+          <></>
+        )}
+        {label ? <Label iconAlignment={iconAlignment}>{label}</Label> : <></>}
+      </Component>
     )
   },
 )
@@ -163,7 +151,7 @@ export const Component = React.forwardRef(
 
     return (
       <>
-        {!!LinkWrapper ? (
+        {LinkWrapper ? (
           <LinkWrapper href={href} passHref ref={ref}>
             <RefButtonComponent {...props} ref={innerRef} />
           </LinkWrapper>

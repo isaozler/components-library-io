@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-declare const _default: ComponentMeta<({ defaultSection, sections, className, iconCustom, icon, unstacked, title }: import("./component.types").IProps) => JSX.Element>;
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;
 export default _default;
-export declare const Default: ComponentStory<({ defaultSection, sections, className, iconCustom, icon, unstacked, title }: import("./component.types").IProps) => JSX.Element>;
+export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;
+export declare const VerticalScroll: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;

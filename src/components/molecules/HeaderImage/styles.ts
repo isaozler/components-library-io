@@ -19,6 +19,7 @@ export const Caption = styled.div.attrs((props: IProps) => props)`
   margin-left: calc(2 * var(--gutter));
   text-align: left;
   padding: var(--gutter);
+  cursor: pointer;
 `;
 
 
@@ -158,3 +159,8 @@ export const Section = styled.div.attrs(({ active }: { active: boolean }) => ({ 
   z-index: 1;
   display: ${({ active }) => active ? 'block' : 'none'};
 `;
+
+export const CaptionLinksWrapper = styled.div`
+  display: block;
+  color: white;
+`

@@ -1,4 +1,4 @@
-import React, { ForwardedRef, Fragment } from 'react'
+import React, { ForwardedRef } from 'react'
 import LinkWrapper from '../LinkWrapper/component'
 import IProps from './component.types'
 
@@ -32,32 +32,30 @@ const Component = ({
   }
 
   return (
-    <Fragment>
-      <Wrapper
-        className={[className, 'image-wrapper'].join(' ')}
-        {...wrapperProps}
-      >
-        {href ? (
-          <LinkWrapper
-            {...linkProps}
-            linkWrapper={linkWrapper}
-            innerRef={innerRef}
-            href={href}
-            rel={newWindow ? 'noreferrer' : ''}
-          >
-            <RefImage
-              ref={innerRef}
-              src={image}
-              alt={alt}
-              title={title}
-              {...imageProps}
-            />
-          </LinkWrapper>
-        ) : (
-          <Image src={image} alt={alt} title={title} {...imageProps} />
-        )}
-      </Wrapper>
-    </Fragment>
+    <Wrapper
+      className={[className, 'image-wrapper'].join(' ')}
+      {...wrapperProps}
+    >
+      {href ? (
+        <LinkWrapper
+          {...linkProps}
+          linkWrapper={linkWrapper}
+          innerRef={innerRef}
+          href={href}
+          rel={newWindow ? 'noreferrer' : ''}
+        >
+          <RefImage
+            ref={innerRef}
+            src={image}
+            alt={alt}
+            title={title}
+            {...imageProps}
+          />
+        </LinkWrapper>
+      ) : (
+        <Image src={image} alt={alt} title={title} {...imageProps} />
+      )}
+    </Wrapper>
   )
 }
 

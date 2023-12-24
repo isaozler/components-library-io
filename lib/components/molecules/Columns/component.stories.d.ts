@@ -1,6 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-declare const _default: ComponentMeta<({ title, className, sizes, contents, hasSpaceBetween, isVertical, isScrollable, scrollHeight, visibleCols, }: import("./component.types").IProps) => JSX.Element>;
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;
 export default _default;
-export declare const Default: ComponentStory<({ title, className, sizes, contents, hasSpaceBetween, isVertical, isScrollable, scrollHeight, visibleCols, }: import("./component.types").IProps) => JSX.Element>;
-export declare const Horizonal: ComponentStory<({ title, className, sizes, contents, hasSpaceBetween, isVertical, isScrollable, scrollHeight, visibleCols, }: import("./component.types").IProps) => JSX.Element>;
-export declare const Vertical: ComponentStory<({ title, className, sizes, contents, hasSpaceBetween, isVertical, isScrollable, scrollHeight, visibleCols, }: import("./component.types").IProps) => JSX.Element>;
+export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;
+export declare const Horizonal: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;
+export declare const Vertical: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("./component.types").IProps>;

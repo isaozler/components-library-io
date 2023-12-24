@@ -1,15 +1,23 @@
 import styled, { css } from 'styled-components';
 import IProps from './component.types';
 
-export const Wrapper = styled.div.attrs((props: IProps) => props)`
+export const Wrapper = styled.div`
+  /* display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  max-width: var(--headerImageWidth);
+  position: relative; */
+`;
+
+export const Body = styled.div.attrs((props: IProps) => props)`
   display: flex;
   flex-direction: row;
   margin: 0 auto;
   padding: 0;
   max-width: var(--headerImageWidth);
   position: relative;
-`;
-
+`
 
 export const Caption = styled.div.attrs((props: IProps) => props)`
   position: absolute;

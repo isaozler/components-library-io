@@ -10,3 +10,4 @@ export declare const Button: import("styled-components").StyledComponent<"button
 export declare const Section: import("styled-components").StyledComponent<"div", any, {
     active: boolean;
 }, "active">;
+export declare const CaptionLinksWrapper: import("styled-components").StyledComponent<"div", any, {}, never>;
